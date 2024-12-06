@@ -51,7 +51,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[53.77518216507664,-2.282064931776354],[54.54929792934174,-0.4711954023581108]]);
+        }).fitBounds([[53.868859538809296,-2.172030186762036],[54.64440649759286,-0.35700845468845804]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -242,7 +242,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
+                fillColor: 'rgba(228,101,103,1.0)',
                 interactive: false,
             }
         }
@@ -360,7 +360,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,192,1.0)',
+                fillColor: 'rgba(255,246,225,1.0)',
                 interactive: false,
             }
         }
@@ -386,8 +386,7 @@
                         <td colspan="2">' + (feature.properties['CENTER_LON'] !== null ? autolinker.link(feature.properties['CENTER_LON'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CENTER_LAT</th>\
-                        <td>' + (feature.properties['CENTER_LAT'] !== null ? autolinker.link(feature.properties['CENTER_LAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['CENTER_LAT'] !== null ? autolinker.link(feature.properties['CENTER_LAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['AA_MINS'] !== null ? autolinker.link(feature.properties['AA_MINS'].toLocaleString()) : '') + '</td>\
@@ -420,7 +419,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(178,223,138,1.0)',
+                fillColor: 'rgba(243,185,237,1.0)',
                 interactive: false,
             }
         }
@@ -479,7 +478,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(51,160,44,1.0)',
+                fillColor: 'rgba(177,104,159,1.0)',
                 interactive: false,
             }
         }
@@ -519,20 +518,20 @@
             return {
                 pane: 'pane_ev45mins_7',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.7)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
+                fillColor: 'rgba(215,90,91,0.7)',
                 interactive: false,
             }
         }
         map.createPane('pane_ev45mins_7');
         map.getPane('pane_ev45mins_7').style.zIndex = 407;
-        map.getPane('pane_ev45mins_7').style['mix-blend-mode'] = 'normal';
+        map.getPane('pane_ev45mins_7').style['mix-blend-mode'] = 'multiply';
         var layer_ev45mins_7 = new L.geoJson(json_ev45mins_7, {
             attribution: '',
             interactive: false,
@@ -566,20 +565,20 @@
             return {
                 pane: 'pane_ev30mins_8',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.7)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(253,174,97,1.0)',
+                fillColor: 'rgba(96,157,196,0.7)',
                 interactive: false,
             }
         }
         map.createPane('pane_ev30mins_8');
         map.getPane('pane_ev30mins_8').style.zIndex = 408;
-        map.getPane('pane_ev30mins_8').style['mix-blend-mode'] = 'normal';
+        map.getPane('pane_ev30mins_8').style['mix-blend-mode'] = 'multiply';
         var layer_ev30mins_8 = new L.geoJson(json_ev30mins_8, {
             attribution: '',
             interactive: false,
@@ -613,20 +612,20 @@
             return {
                 pane: 'pane_ev15mins_9',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.7)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,192,1.0)',
+                fillColor: 'rgba(188,216,229,0.7)',
                 interactive: false,
             }
         }
         map.createPane('pane_ev15mins_9');
         map.getPane('pane_ev15mins_9').style.zIndex = 409;
-        map.getPane('pane_ev15mins_9').style['mix-blend-mode'] = 'normal';
+        map.getPane('pane_ev15mins_9').style['mix-blend-mode'] = 'multiply';
         var layer_ev15mins_9 = new L.geoJson(json_ev15mins_9, {
             attribution: '',
             interactive: false,
@@ -660,20 +659,20 @@
             return {
                 pane: 'pane_ev10mins_10',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.7)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(178,223,138,1.0)',
+                fillColor: 'rgba(197,227,168,0.7)',
                 interactive: false,
             }
         }
         map.createPane('pane_ev10mins_10');
         map.getPane('pane_ev10mins_10').style.zIndex = 410;
-        map.getPane('pane_ev10mins_10').style['mix-blend-mode'] = 'normal';
+        map.getPane('pane_ev10mins_10').style['mix-blend-mode'] = 'multiply';
         var layer_ev10mins_10 = new L.geoJson(json_ev10mins_10, {
             attribution: '',
             interactive: false,
@@ -708,20 +707,20 @@
             return {
                 pane: 'pane_ev5mins_11',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.7)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(51,160,44,1.0)',
+                fillColor: 'rgba(108,181,102,0.7)',
                 interactive: false,
             }
         }
         map.createPane('pane_ev5mins_11');
         map.getPane('pane_ev5mins_11').style.zIndex = 411;
-        map.getPane('pane_ev5mins_11').style['mix-blend-mode'] = 'normal';
+        map.getPane('pane_ev5mins_11').style['mix-blend-mode'] = 'multiply';
         var layer_ev5mins_11 = new L.geoJson(json_ev5mins_11, {
             attribution: '',
             interactive: false,
@@ -1568,11 +1567,11 @@
             {label: '<img src="legend/Majorroads_13.png" /> Major roads', layer: layer_Majorroads_13},
             {label: "Population density", layer: layer_Populationdensity_12},
         {label: '<b>Travel distance to EV charging</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/ev5mins_11.png" /> ev 5mins', layer: layer_ev5mins_11},
-            {label: '<img src="legend/ev10mins_10.png" /> ev 10mins', layer: layer_ev10mins_10},
-            {label: '<img src="legend/ev15mins_9.png" /> ev 15mins', layer: layer_ev15mins_9},
-            {label: '<img src="legend/ev30mins_8.png" /> ev 30mins', layer: layer_ev30mins_8},
-            {label: '<img src="legend/ev45mins_7.png" /> ev 45mins', layer: layer_ev45mins_7},]},
+            {label: '<img src="legend/ev5mins_11.png" /> ev 5 mins', layer: layer_ev5mins_11},
+            {label: '<img src="legend/ev10mins_10.png" /> ev 10 mins', layer: layer_ev10mins_10},
+            {label: '<img src="legend/ev15mins_9.png" /> ev 15 mins', layer: layer_ev15mins_9},
+            {label: '<img src="legend/ev30mins_8.png" /> ev 30 mins', layer: layer_ev30mins_8},
+            {label: '<img src="legend/ev45mins_7.png" /> ev 45 mins', layer: layer_ev45mins_7},]},
         {label: '<b>Travel distance to petrol station</b>', selectAllCheckbox: true, children: [
             {label: '<img src="legend/petrol5mins_6.png" /> petrol 5 mins', layer: layer_petrol5mins_6},
             {label: '<img src="legend/petrol10mins_5.png" /> petrol 10 mins', layer: layer_petrol10mins_5},
