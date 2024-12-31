@@ -39,19 +39,19 @@
         <script src="data/petrol15mins_4.js"></script>
         <script src="data/petrol10mins_5.js"></script>
         <script src="data/petrol5mins_6.js"></script>
-        <script src="data/ev45mins_7.js"></script>
-        <script src="data/ev30mins_8.js"></script>
+        <script src="data/ev30mins_7.js"></script>
+        <script src="data/ev45mins_8.js"></script>
         <script src="data/ev15mins_9.js"></script>
         <script src="data/ev10mins_10.js"></script>
         <script src="data/ev5mins_11.js"></script>
         <script src="data/Majorroads_13.js"></script>
         <script src="data/Towns_14.js"></script>
         <script src="data/petrolstations_15.js"></script>
-        <script src="data/evchargepoints_16.js"></script>
+        <script src="data/evchargpoints_16.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[53.868859538809296,-2.172030186762036],[54.64440649759286,-0.35700845468845804]]);
+        }).fitBounds([[53.83874534737928,-2.4691303748838163],[54.61542756689198,-0.273634601477606]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -242,7 +242,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(228,101,103,1.0)',
+                fillColor: 'rgba(183,72,75,1.0)',
                 interactive: false,
             }
         }
@@ -383,6 +383,9 @@
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <td colspan="2">' + (feature.properties['CENTER_LON'] !== null ? autolinker.link(feature.properties['CENTER_LON'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -396,9 +399,6 @@
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['TOTAL_POP'] !== null ? autolinker.link(feature.properties['TOTAL_POP'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['pop_int'] !== null ? autolinker.link(feature.properties['pop_int'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -442,6 +442,9 @@
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <td colspan="2">' + (feature.properties['CENTER_LON'] !== null ? autolinker.link(feature.properties['CENTER_LON'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -455,9 +458,6 @@
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['TOTAL_POP'] !== null ? autolinker.link(feature.properties['TOTAL_POP'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['pop_int'] !== null ? autolinker.link(feature.properties['pop_int'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -478,7 +478,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(177,104,159,1.0)',
+                fillColor: 'rgba(152,125,183,1.0)',
                 interactive: false,
             }
         }
@@ -496,7 +496,7 @@
         });
         bounds_group.addLayer(layer_petrol5mins_6);
         map.addLayer(layer_petrol5mins_6);
-        function pop_ev45mins_7(feature, layer) {
+        function pop_ev30mins_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
@@ -515,56 +515,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ev45mins_7_0() {
+        function style_ev30mins_7_0() {
             return {
-                pane: 'pane_ev45mins_7',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(215,90,91,1.0)',
-                interactive: false,
-            }
-        }
-        map.createPane('pane_ev45mins_7');
-        map.getPane('pane_ev45mins_7').style.zIndex = 407;
-        map.getPane('pane_ev45mins_7').style['mix-blend-mode'] = 'multiply';
-        var layer_ev45mins_7 = new L.geoJson(json_ev45mins_7, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_ev45mins_7',
-            layerName: 'layer_ev45mins_7',
-            pane: 'pane_ev45mins_7',
-            onEachFeature: pop_ev45mins_7,
-            style: style_ev45mins_7_0,
-        });
-        bounds_group.addLayer(layer_ev45mins_7);
-        function pop_ev30mins_8(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['AA_MINS'] !== null ? autolinker.link(feature.properties['AA_MINS'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['area_km2'] !== null ? autolinker.link(feature.properties['area_km2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_ev30mins_8_0() {
-            return {
-                pane: 'pane_ev30mins_8',
+                pane: 'pane_ev30mins_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -577,19 +530,66 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_ev30mins_8');
-        map.getPane('pane_ev30mins_8').style.zIndex = 408;
-        map.getPane('pane_ev30mins_8').style['mix-blend-mode'] = 'multiply';
-        var layer_ev30mins_8 = new L.geoJson(json_ev30mins_8, {
+        map.createPane('pane_ev30mins_7');
+        map.getPane('pane_ev30mins_7').style.zIndex = 407;
+        map.getPane('pane_ev30mins_7').style['mix-blend-mode'] = 'multiply';
+        var layer_ev30mins_7 = new L.geoJson(json_ev30mins_7, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_ev30mins_8',
-            layerName: 'layer_ev30mins_8',
-            pane: 'pane_ev30mins_8',
-            onEachFeature: pop_ev30mins_8,
-            style: style_ev30mins_8_0,
+            dataVar: 'json_ev30mins_7',
+            layerName: 'layer_ev30mins_7',
+            pane: 'pane_ev30mins_7',
+            onEachFeature: pop_ev30mins_7,
+            style: style_ev30mins_7_0,
         });
-        bounds_group.addLayer(layer_ev30mins_8);
+        bounds_group.addLayer(layer_ev30mins_7);
+        function pop_ev45mins_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AA_MINS'] !== null ? autolinker.link(feature.properties['AA_MINS'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['area_km2'] !== null ? autolinker.link(feature.properties['area_km2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_ev45mins_8_0() {
+            return {
+                pane: 'pane_ev45mins_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,90,91,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ev45mins_8');
+        map.getPane('pane_ev45mins_8').style.zIndex = 408;
+        map.getPane('pane_ev45mins_8').style['mix-blend-mode'] = 'multiply';
+        var layer_ev45mins_8 = new L.geoJson(json_ev45mins_8, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ev45mins_8',
+            layerName: 'layer_ev45mins_8',
+            pane: 'pane_ev45mins_8',
+            onEachFeature: pop_ev45mins_8,
+            style: style_ev45mins_8_0,
+        });
+        bounds_group.addLayer(layer_ev45mins_8);
         function pop_ev15mins_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -735,7 +735,7 @@
         map.createPane('pane_Populationdensity_12');
         map.getPane('pane_Populationdensity_12').style.zIndex = 412;
         var img_Populationdensity_12 = 'data/Populationdensity_12.png';
-        var img_bounds_Populationdensity_12 = [[53.61022070068893,-2.571571758266613],[54.566721628522096,-0.19478597641772188]];
+        var img_bounds_Populationdensity_12 = [[53.61050874223202,-2.571571758266613],[54.56671986376443,-0.194939379775394]];
         var layer_Populationdensity_12 = new L.imageOverlay(img_Populationdensity_12,
                                               img_bounds_Populationdensity_12,
                                               {pane: 'pane_Populationdensity_12'});
@@ -1276,7 +1276,7 @@
             },
         });
         bounds_group.addLayer(layer_petrolstations_15);
-        function pop_evchargepoints_16(feature, layer) {
+        function pop_evchargpoints_16(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
@@ -1490,10 +1490,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_evchargepoints_16_0(feature) {
+        function style_evchargpoints_16_0(feature) {
             if (feature.properties['connector1_kw'] >= 22.000000 && feature.properties['connector1_kw'] <= 50.000000 ) {
                 return {
-                pane: 'pane_evchargepoints_16',
+                pane: 'pane_evchargpoints_16',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1509,7 +1509,7 @@
             }
             if (feature.properties['connector1_kw'] >= 50.000000 && feature.properties['connector1_kw'] <= 100.000000 ) {
                 return {
-                pane: 'pane_evchargepoints_16',
+                pane: 'pane_evchargpoints_16',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1525,7 +1525,7 @@
             }
             if (feature.properties['connector1_kw'] >= 100.000000 && feature.properties['connector1_kw'] <= 350.000000 ) {
                 return {
-                pane: 'pane_evchargepoints_16',
+                pane: 'pane_evchargpoints_16',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1540,28 +1540,28 @@
             }
             }
         }
-        map.createPane('pane_evchargepoints_16');
-        map.getPane('pane_evchargepoints_16').style.zIndex = 416;
-        map.getPane('pane_evchargepoints_16').style['mix-blend-mode'] = 'normal';
-        var layer_evchargepoints_16 = new L.geoJson(json_evchargepoints_16, {
+        map.createPane('pane_evchargpoints_16');
+        map.getPane('pane_evchargpoints_16').style.zIndex = 416;
+        map.getPane('pane_evchargpoints_16').style['mix-blend-mode'] = 'normal';
+        var layer_evchargpoints_16 = new L.geoJson(json_evchargpoints_16, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_evchargepoints_16',
-            layerName: 'layer_evchargepoints_16',
-            pane: 'pane_evchargepoints_16',
-            onEachFeature: pop_evchargepoints_16,
+            dataVar: 'json_evchargpoints_16',
+            layerName: 'layer_evchargpoints_16',
+            pane: 'pane_evchargpoints_16',
+            onEachFeature: pop_evchargpoints_16,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_evchargepoints_16_0(feature));
+                return L.circleMarker(latlng, style_evchargpoints_16_0(feature));
             },
         });
-        bounds_group.addLayer(layer_evchargepoints_16);
-        map.addLayer(layer_evchargepoints_16);
+        bounds_group.addLayer(layer_evchargpoints_16);
+        map.addLayer(layer_evchargpoints_16);
         var overlaysTree = [
-            {label: 'ev chargepoints<br /><table><tr><td style="text-align: center;"><img src="legend/evchargepoints_16_22kw50kw0.png" /></td><td>22kw - 50kw</td></tr><tr><td style="text-align: center;"><img src="legend/evchargepoints_16_50kw100kw1.png" /></td><td>50kw - 100kw</td></tr><tr><td style="text-align: center;"><img src="legend/evchargepoints_16_100kw350kw2.png" /></td><td>100kw - 350kw</td></tr></table>', layer: layer_evchargepoints_16},
+            {label: 'ev chargpoints<br /><table><tr><td style="text-align: center;"><img src="legend/evchargpoints_16_22kw50kw0.png" /></td><td>22kw - 50kw</td></tr><tr><td style="text-align: center;"><img src="legend/evchargpoints_16_50kw100kw1.png" /></td><td>50kw - 100kw</td></tr><tr><td style="text-align: center;"><img src="legend/evchargpoints_16_100kw350kw2.png" /></td><td>100kw - 350kw</td></tr></table>', layer: layer_evchargpoints_16},
             {label: '<img src="legend/petrolstations_15.png" /> petrol stations', layer: layer_petrolstations_15},
             {label: 'Towns', layer: layer_Towns_14},
             {label: '<img src="legend/Majorroads_13.png" /> Major roads', layer: layer_Majorroads_13},
@@ -1570,8 +1570,8 @@
             {label: '<img src="legend/ev5mins_11.png" /> ev 5 mins', layer: layer_ev5mins_11},
             {label: '<img src="legend/ev10mins_10.png" /> ev 10 mins', layer: layer_ev10mins_10},
             {label: '<img src="legend/ev15mins_9.png" /> ev 15 mins', layer: layer_ev15mins_9},
-            {label: '<img src="legend/ev30mins_8.png" /> ev 30 mins', layer: layer_ev30mins_8},
-            {label: '<img src="legend/ev45mins_7.png" /> ev 45 mins', layer: layer_ev45mins_7},]},
+            {label: '<img src="legend/ev45mins_8.png" /> ev 45 mins', layer: layer_ev45mins_8},
+            {label: '<img src="legend/ev30mins_7.png" /> ev 30 mins', layer: layer_ev30mins_7},]},
         {label: '<b>Travel distance to petrol station</b>', selectAllCheckbox: true, children: [
             {label: '<img src="legend/petrol5mins_6.png" /> petrol 5 mins', layer: layer_petrol5mins_6},
             {label: '<img src="legend/petrol10mins_5.png" /> petrol 10 mins', layer: layer_petrol10mins_5},
